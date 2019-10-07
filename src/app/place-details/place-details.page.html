@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Visit Chios - Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToDirections()">
+      <ion-icon name="navigate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" class="ion-text-center">
+        <ion-avatar slot="start">
+          <img src='{{details.icon}}'>
+        </ion-avatar>
+        <ion-label>
+          <h2 class="ion-text-wrap header">{{details.name}}</h2>
+        </ion-label>
+        <p slot="end"></p>
+      </ion-item>
+      <p class="ion-text-wrap ion-text-center">Type: {{details.types.join(', ') | titlecase }}</p>
+    </ion-card-header>
+    <img src="{{picUrl}}">
+    <ion-card-content>
+      <h1>Details</h1>
+      <p class="ion-text-wrap"><span>Address: </span> {{details.formatted_address}}</p>
+      <p class="ion-text-wrap"><span>Phone: </span>{{details.formatted_phone_number}}</p>
+      <p class="ion-text-wrap"><span>Distance: </span>{{distance?.distance.text}}</p>
+      <p class="ion-text-wrap"><span>Duration (By Car): </span>{{distance?.duration.text}}</p>
+      <p class="ion-text-wrap">Rating:
+        <span *ngFor="let star of starsArray">
+          <ion-icon *ngIf="star=='w'" name="star" color="secondary"></ion-icon>
+          <ion-icon *ngIf="star=='d'" name="star-half" color="secondary"></ion-icon>
+          <ion-icon *ngIf="star=='e'" name="star-outline" color="secondary"></ion-icon>
+        </span>
+        of {{details.user_ratings_total}} total votes
+      </p>
+      <a *ngIf="details.website!==''" href="{{details.website}}">
+        <p>Website</p>
+      </a>
+      <p>Reviews:</p>
+      <div class="ion-text-wrap review-div" *ngFor="let review of details?.reviews">
+        <p><span>Author's Name:</span>{{review.author_name}}</p>
+        <p><span>Relative Time Description: </span>{{review.relative_time_description}}</p>
+        <p><span>Rating: </span>{{review.rating}}</p>
+        <p><span>Text: </span>{{review.text}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Visit Chios - Directions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="center" horizontal="end">
+    <ion-fab-button (click)="changeMode('DRIVING')">
+      <ion-icon name="car"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="center" horizontal="start">
+    <ion-fab-button (click)="changeMode('WALKING')">
+      <ion-icon name="walk"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div id="map">
+  </div>
+</ion-content>

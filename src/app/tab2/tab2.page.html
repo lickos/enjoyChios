@@ -1,9 +1,81 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Two
+    <ion-title color="primary">
+      Visit Chios - Places Search
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class="ion-padding">
+  <ion-text color="primary">
+    <h3>Select places to see near you</h3>
+    <p>(or don't select any to see all places)</p>
+  </ion-text>
+  <form>
+    <ion-item>
+      <ion-icon src="assets/icon/hospital.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Hospital</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end" (ionChange)="typesSelect(['hospital'])">
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon src="assets/icon/takeoff-the-plane.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Airport</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end" (ionChange)="typesSelect(['airport'])"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon src="assets/icon/car.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Cars (Rent, taxi e.t.c.)</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end"
+        (ionChange)="typesSelect(['car_rental', 'car_repair', 'car_wash', 'gas_station', 'parking', 'taxi_stand'])">
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon src="assets/icon/police.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Police Station</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end" (ionChange)="typesSelect(['police'])"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon src="assets/icon/fork.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Food & Drink</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end"
+        (ionChange)="typesSelect(['bakery', 'cafe', 'restaurant', 'night_club'])"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon src="assets/icon/shopping-cart.svg" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <ion-text>
+          <p>Shopping Stores</p>
+        </ion-text>
+      </ion-label>
+      <ion-checkbox color="primary" slot="end"
+        (ionChange)="typesSelect(['bicycle_store', 'clothing_store', 'convenience_store', 'department_store', 'electronics_store', 'furniture_store', 'hardware_store', 'home_goods_store', 'jewelry_store', 'liquor_store', 'pet_store', 'shoe_store', 'store'])">
+      </ion-checkbox>
+    </ion-item>
+  </form>
+
+  <ion-button expand="block" fill="outline" class="ion-margin-top ion-padding" shape="round" (click)='getPlaces()'>
+    <p>Proceed</p>
+  </ion-button>
+
+</ion-content>

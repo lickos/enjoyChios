@@ -24,6 +24,18 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+          },
+          {
+            path: 'places-list',
+            loadChildren: () => import('./../places-list/places-list.module').then(m => m.PlacesListPageModule)
+          },
+          {
+            path: 'place-details',
+            loadChildren: () => import('./../place-details/place-details.module').then(m => m.PlaceDetailsPageModule)
+          },
+          {
+            path: 'directions',
+            loadChildren: () => import('./../directions/directions.module').then(m => m.DirectionsPageModule)
           }
         ]
       },
@@ -34,6 +46,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+          }
+        ]
+      },
+      {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../tab4/tab4.module').then(m => m.Tab4PageModule)
           }
         ]
       },
@@ -55,4 +77,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

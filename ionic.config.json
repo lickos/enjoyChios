@@ -1,5 +1,7 @@
 {
   "name": "visitChios",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

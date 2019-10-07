@@ -1,4 +1,45 @@
 .welcome-card img {
-  max-height: 35vh;
+  max-height: 40vh;
   overflow: hidden;
 }
+
+.sc-ion-card-ios-h, 
+.sc-ion-card-md-h{
+  --background: var(--ion-item-background,#F2DAAC);
+}
+
+p {
+  color: #1d2824
+}
+
+h3 {
+  color: #A62424;
+}
+
+.facebook-login {
+  --background: #395795;
+}
+
+.google-login {
+  --background: #C94131
+}
+
+.social {
+  max-height: 40vh;
+  margin-top: 5vh;
+}
+
+ion-card {
+  height: 50vh;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+h3 {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
